@@ -1,0 +1,97 @@
+.heading {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.sub {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-border);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.featured {
+  border-color: rgba(56, 189, 248, 0.15);
+}
+
+.cardTop {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 10px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 99px;
+}
+
+.cardLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--text-heading);
+}
