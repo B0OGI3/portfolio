@@ -10,7 +10,12 @@ const SORT_OPTIONS = [
 const EXCLUDED_TOPICS = new Set(['portfolio'])
 const MAX_TAGS = 5
 
+const NAME_OVERRIDES = {
+  MOVESYNC: 'MoveSync',
+}
+
 function formatRepoName(name) {
+  if (NAME_OVERRIDES[name]) return NAME_OVERRIDES[name]
   return name
     .replace(/-/g, ' ')
     .replace(/_/g, ' ')
