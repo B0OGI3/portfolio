@@ -8,6 +8,14 @@ const SORT_OPTIONS = [
 ]
 
 const EXCLUDED_TOPICS = new Set(['portfolio'])
+const MAX_TAGS = 5
+
+function formatRepoName(name) {
+  return name
+    .replace(/-/g, ' ')
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+}
 
 function ExternalIcon() {
   return (
@@ -110,12 +118,12 @@ export default function Projects() {
         {loading
           ? Array.from({ length: 4 }).map((_, i) => <ProjectSkeleton key={i} />)
           : sorted.map((repo) => {
-              const tags = repo.topics?.filter((t) => !EXCLUDED_TOPICS.has(t)) ?? []
+              const tags = (repo.topics?.filter((t) => !EXCLUDED_TOPICS.has(t)) ?? []).slice(0, MAX_TAGS)
               return (
                 <article key={repo.id} className={styles.card}>
                   <div className={styles.cardTop}>
                     <div className={styles.cardTitleRow}>
-                      <h3 className={styles.cardTitle}>{repo.name}</h3>
+                      <h3 className={styles.cardTitle}>{formatRepoName(repo.name)}</h3>
                       {repo.stargazers_count > 0 && (
                         <span className={styles.stars}>
                           <StarIcon /> {repo.stargazers_count}

@@ -7,10 +7,10 @@ export default function Hero() {
       <h1 className={styles.name}>Ian Davis</h1>
       <p className={styles.title}>Full-Stack Software Developer</p>
       <p className={styles.bio}>
-        Recent CS grad based in the Wilmington / Elkton area. I build fast,
-        production-ready web applications — from real-time multiplayer systems
-        to data-driven dashboards. Strong across the full stack with React,
-        Node.js, PostgreSQL, and Docker.
+        Full-stack software engineer with 2+ years of production experience
+        shipping real systems — from inventory management platforms to developer
+        tooling. Based in the Wilmington / Elkton area, seeking a role where I
+        can keep building things that matter.
       </p>
       <div className={styles.ctas}>
         <a
