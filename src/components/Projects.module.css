@@ -25,6 +25,16 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .sortBar {
+    width: 100%;
+  }
+  .sortBtn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
 .sortBtn {
   padding: 6px 14px;
   font-size: 13px;
@@ -56,7 +66,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 20px;
 }
 
