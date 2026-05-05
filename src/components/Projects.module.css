@@ -1,14 +1,57 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
 .heading {
   font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .sub {
   color: var(--text);
   font-size: 16px;
-  margin-bottom: 48px;
+}
+
+.sortBar {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sortBtn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.sortBtn:hover {
+  border-color: var(--accent-border);
+  color: var(--text-bright);
+}
+
+.sortActive {
+  border-color: var(--accent-border);
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.error {
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 32px;
 }
 
 .grid {
@@ -34,19 +77,31 @@
   transform: translateY(-2px);
 }
 
-.featured {
-  border-color: rgba(56, 189, 248, 0.15);
-}
-
 .cardTop {
   flex: 1;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .cardTitle {
   font-size: 17px;
   font-weight: 600;
   color: var(--text-heading);
-  margin-bottom: 10px;
+}
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text);
+  flex-shrink: 0;
 }
 
 .cardDesc {
@@ -94,4 +149,56 @@
 
 .link:hover {
   color: var(--text-heading);
+}
+
+/* Skeletons */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeletonLine {
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg-card-hover) 50%, var(--border) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  height: 14px;
+}
+
+.skeletonTitle {
+  height: 18px;
+  width: 60%;
+}
+
+.skeletonDesc {
+  width: 100%;
+}
+
+.skeletonShort {
+  width: 75%;
+}
+
+.skeletonTags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.skeletonTag {
+  height: 22px;
+  width: 60px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg-card-hover) 50%, var(--border) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
 }
